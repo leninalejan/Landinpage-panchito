@@ -18,7 +18,7 @@
 
 ## 📋 Descripción
 
-**UNIVOmap** es una landing page y herramienta de mapeo universitario diseñada para estudiantes, docentes y visitantes de la **Universidad de Oriente (UNIVO)**. Permite navegar el campus de forma clara, rápida e intuitiva, mostrando la ubicación de aulas, laboratorios, facultades, cafeterías y más.
+**UNIVOmap** es una landing page y herramienta que servira para la introduccion a un proyecto de mapeo universitario diseñada para estudiantes, docentes y visitantes de la **Universidad de Oriente (UNIVO)**. Permite navegar el campus de forma clara, rápida e intuitiva, mostrando la ubicación de aulas, laboratorios, facultades, cafeterías y más.
 
 El proyecto nace de la necesidad de orientar a quienes ingresan por primera vez al campus, eliminando la confusión y el tiempo perdido buscando espacios académicos.
 
