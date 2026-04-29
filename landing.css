@@ -863,6 +863,60 @@ footer p {
   margin: 1.5rem 0;
 }
 
+.footer-contact {
+  margin-top: 1.5rem;
+}
+
+.footer-contact-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 0.9rem;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.footer-social-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.footer-social-link.whatsapp {
+  color: #6ee7d3;
+}
+
+.footer-social-link.github {
+  color: #e7edf3;
+}
+
+.footer-social-link svg {
+  flex-shrink: 0;
+}
+
 .footer-links a {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
@@ -1156,6 +1210,23 @@ html[data-theme="dark"] footer {
 html[data-theme="dark"] footer .logo       { color: var(--dk-text-primary); }
 html[data-theme="dark"] footer .logo span  { color: var(--dk-blue); }
 html[data-theme="dark"] footer p           { color: var(--dk-text-tertiary); }
+html[data-theme="dark"] .footer-contact-title { color: var(--dk-text-secondary); }
+html[data-theme="dark"] .footer-social-link {
+  background: var(--dk-bg-raised);
+  border-color: var(--dk-border-light);
+  color: var(--dk-text-primary);
+}
+html[data-theme="dark"] .footer-social-link:hover {
+  background: var(--dk-bg-elevated);
+  border-color: rgba(77, 157, 224, 0.25);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+html[data-theme="dark"] .footer-social-link.whatsapp {
+  color: #5ebfa8;
+}
+html[data-theme="dark"] .footer-social-link.github {
+  color: #d8e2ec;
+}
 html[data-theme="dark"] .footer-links a    { color: var(--dk-text-secondary); }
 html[data-theme="dark"] .footer-links a:hover { color: var(--dk-text-primary); }
 
@@ -1390,6 +1461,7 @@ html, body {
   /* Footer */
   footer        { padding: 2.5rem var(--px); }
   .footer-links { gap: 1rem 1.5rem; flex-wrap: wrap; justify-content: center; }
+  .footer-socials { gap: 0.7rem; }
 
   /* Tipografía de sección */
   .section-title { font-size: clamp(22px, 6vw, 32px); }
@@ -1485,6 +1557,7 @@ html, body {
   /* Footer */
   footer          { padding: 2rem var(--px); }
   .footer-links   { gap: 0.75rem 1rem; }
+  .footer-social-link { width: 100%; max-width: 340px; justify-content: center; }
 
   /* CTA */
   .cta-btns .btn-main,
