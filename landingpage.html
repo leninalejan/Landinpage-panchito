@@ -8,6 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var storedTheme = localStorage.getItem('univomap-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = storedTheme || (prefersDark ? 'dark' : 'light');
+      } catch (error) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="landing.css">
 </head>
 <body>
@@ -29,6 +40,17 @@
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
+      </button>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Cambiar a modo oscuro">
+        <svg class="theme-toggle-icon theme-toggle-icon-moon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10.5 2.2A5.6 5.6 0 1 0 13.8 10.5 6.2 6.2 0 0 1 10.5 2.2Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <svg class="theme-toggle-icon theme-toggle-icon-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="2.7" stroke="currentColor" stroke-width="1.4"></circle>
+          <path d="M8 1.8v1.4M8 12.8v1.4M1.8 8h1.4M12.8 8h1.4M3.4 3.4l1 1M11.6 11.6l1 1M12.6 3.4l-1 1M4.4 11.6l-1 1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path>
+        </svg>
+        <span class="theme-toggle-label">Oscuro</span>
       </button>
 
       <a href="#cta" class="nav-cta">Explorar ahora</a>
@@ -378,14 +400,34 @@
   <script>
     const toggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeStorageKey = 'univomap-theme';
 
     function setMenu(open) {
       navLinks.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', String(open));
     }
 
+    function setTheme(theme) {
+      const isDark = theme === 'dark';
+      document.documentElement.dataset.theme = theme;
+      document.body.dataset.theme = theme;
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+      themeToggle.querySelector('.theme-toggle-label').textContent = isDark ? 'Claro' : 'Oscuro';
+      localStorage.setItem(themeStorageKey, theme);
+    }
+
+    const savedTheme = localStorage.getItem(themeStorageKey);
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
     toggle.addEventListener('click', () => {
       setMenu(!navLinks.classList.contains('open'));
+    });
+
+    themeToggle.addEventListener('click', () => {
+      setTheme(document.body.dataset.theme === 'dark' ? 'light' : 'dark');
     });
 
     navLinks.querySelectorAll('a').forEach((link) => {
