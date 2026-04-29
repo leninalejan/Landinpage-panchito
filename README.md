@@ -96,12 +96,13 @@ Landinpage-UnivoMap/
 - 🐙 [GitHub](https://github.com/leninalejan/Landinpage-UnivoMap)
 
 ---
-##🤵Integrantes 
--Lenin Alejandro Hernández Coreas
--Bremond Antony Hernández Coreas
--Kevin Bladimir Guardado Ortez 
--Mauricio Antonio Bustillo Rosales
--Henry Fernando Portillo Luna 
+## 🤵 Integrantes
+
+- **Lenin Alejandro Hernández Coreas**  
+- **Bremond Antony Hernández Coreas**  
+- **Kevin Bladimir Guardado Ortez**  
+- **Mauricio Antonio Bustillo Rosales**  
+- **Henry Fernando Portillo Luna**  
 
 ## 📄 Licencia
 <div align="center">
