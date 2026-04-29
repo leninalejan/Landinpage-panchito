@@ -377,11 +377,9 @@
       <h2 class="section-title" style="text-align:center;">¿Listo para explorar<br>el campus UNIVO?</h2>
       <p>Accede al mapa interactivo desde cualquier dispositivo, sin necesidad de descargar nada. Gratis para toda la comunidad universitaria.</p>
       <div class="cta-btns">
-        <!-- Reemplaza este enlace por la URL real de tu mapa -->
         <a href="UnivoMap" class="btn-main">Abrir mapa</a>
         <a href="#features" class="btn-outline">Ver todas las funciones</a>
       </div>
-
     </section>
   </main>
 
@@ -390,7 +388,6 @@
     <div class="footer-contact">
       <div class="footer-contact-title">Contacto</div>
       <div class="footer-socials" aria-label="Redes sociales">
-        <!-- Reemplaza los enlaces por tus URLs reales -->
         <a class="footer-social-link whatsapp" href="https://wa.link/jqraq3" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M20.5 11.8a8.5 8.5 0 1 1-15.4-5.1L3.5 3.5l3.4 1.1A8.5 8.5 0 0 1 20.5 11.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
@@ -416,54 +413,8 @@
     </div>
     <p>© 2026 UNIVOmap - Universidad de Oriente, San Miguel, El Salvador</p>
     <p style="margin-top:6px;">Proyecto estudiantil de mapeo universitario</p>
-    
-    
-
   </footer>
 
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    const themeToggle = document.getElementById('themeToggle');
-    const themeStorageKey = 'univomap-theme';
-
-    function setMenu(open) {
-      navLinks.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-    }
-
-    function setTheme(theme) {
-      const isDark = theme === 'dark';
-      document.documentElement.dataset.theme = theme;
-      document.body.dataset.theme = theme;
-      themeToggle.setAttribute('aria-pressed', String(isDark));
-      themeToggle.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-      themeToggle.querySelector('.theme-toggle-label').textContent = isDark ? 'Claro' : 'Oscuro';
-      localStorage.setItem(themeStorageKey, theme);
-    }
-
-    const savedTheme = localStorage.getItem(themeStorageKey);
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
-
-    toggle.addEventListener('click', () => {
-      setMenu(!navLinks.classList.contains('open'));
-    });
-
-    themeToggle.addEventListener('click', () => {
-      setTheme(document.body.dataset.theme === 'dark' ? 'light' : 'dark');
-    });
-
-    navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => setMenu(false));
-    });
-
-    document.addEventListener('click', (event) => {
-      const clickedInsideNav = event.target.closest('nav');
-      if (!clickedInsideNav) {
-        setMenu(false);
-      }
-    });
-  </script>
+  <script src="landing.js" defer></script>
 </body>
 </html>
